@@ -1,0 +1,296 @@
+:root {
+  --text: #333333;
+  --muted: #666666;
+  --link: #1772a5;
+  --link-hover: #0b4f79;
+  --rule: #e5e5e5;
+  --bg: #ffffff;
+  --soft-bg: #f7f7f7;
+  --content: 950px;
+  --thumb: 180px;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-size: 16px;
+  line-height: 1.45;
+}
+
+a {
+  color: var(--link);
+  text-decoration: none;
+}
+
+a:hover,
+a:focus {
+  color: var(--link-hover);
+  text-decoration: underline;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+.skip-link {
+  position: absolute;
+  left: 12px;
+  top: 12px;
+  transform: translateY(-140%);
+  background: #ffffff;
+  border: 1px solid var(--rule);
+  padding: 8px 10px;
+  z-index: 10;
+}
+
+.skip-link:focus {
+  transform: translateY(0);
+}
+
+.topbar {
+  position: sticky;
+  top: 0;
+  z-index: 5;
+  background: rgba(255, 255, 255, 0.96);
+  border-bottom: 1px solid var(--rule);
+}
+
+.nav {
+  width: min(var(--content), calc(100vw - 32px));
+  min-height: 58px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 34px;
+  font-weight: 600;
+}
+
+.nav a {
+  color: #555555;
+}
+
+.nav a:hover,
+.nav a:focus,
+.nav a.is-active {
+  color: #111111;
+}
+
+.page {
+  width: min(var(--content), calc(100vw - 32px));
+  margin: 0 auto;
+  padding: 58px 0 40px;
+}
+
+.section {
+  scroll-margin-top: 82px;
+  margin-top: 44px;
+}
+
+.profile {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 232px;
+  gap: 44px;
+  align-items: start;
+  margin-top: 0;
+}
+
+h1 {
+  margin: 0 0 12px;
+  text-align: center;
+  font-size: 36px;
+  font-weight: 500;
+  line-height: 1.2;
+}
+
+h2 {
+  margin: 0 0 18px;
+  font-size: 22px;
+  font-weight: 700;
+  line-height: 1.25;
+}
+
+h3 {
+  margin: 0 0 4px;
+  font-size: 17px;
+  line-height: 1.35;
+}
+
+p {
+  margin: 0 0 12px;
+}
+
+ul {
+  margin: 8px 0 0 22px;
+  padding: 0;
+}
+
+li + li {
+  margin-top: 3px;
+}
+
+.links {
+  margin: 22px 0;
+  text-align: center;
+}
+
+.links span {
+  color: #999999;
+  padding: 0 8px;
+}
+
+.notice {
+  margin-top: 22px;
+  font-weight: 700;
+}
+
+.profile-photo {
+  margin: 34px 0 0;
+}
+
+.profile-photo img {
+  width: 232px;
+  height: 232px;
+  object-fit: cover;
+  border-radius: 6px;
+}
+
+.profile-photo figcaption {
+  margin-top: 8px;
+  color: var(--muted);
+  font-size: 13px;
+  text-align: center;
+}
+
+.callout {
+  margin: 22px 0 58px;
+}
+
+.callout summary {
+  cursor: pointer;
+  font-weight: 700;
+}
+
+.callout p {
+  margin: 12px 0 0;
+  padding-left: 18px;
+}
+
+.news-list p {
+  margin-bottom: 7px;
+}
+
+.news-list time {
+  color: var(--muted);
+  font-weight: 700;
+}
+
+.note {
+  color: var(--muted);
+}
+
+.publication {
+  display: grid;
+  grid-template-columns: var(--thumb) minmax(0, 1fr);
+  gap: 22px;
+  align-items: start;
+  margin-top: 22px;
+}
+
+.publication img {
+  width: var(--thumb);
+  height: 98px;
+  object-fit: cover;
+  border: 1px solid var(--rule);
+  border-radius: 4px;
+  background: var(--soft-bg);
+}
+
+.authors,
+.venue,
+.paper-links {
+  margin-bottom: 3px;
+}
+
+.authors,
+.venue {
+  color: #444444;
+}
+
+.paper-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 9px;
+}
+
+.footer {
+  width: min(var(--content), calc(100vw - 32px));
+  margin: 14px auto 0;
+  padding: 24px 0 36px;
+  border-top: 1px solid var(--rule);
+  color: var(--muted);
+  font-size: 14px;
+}
+
+@media (max-width: 760px) {
+  .nav {
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 14px 22px;
+    padding: 10px 0;
+  }
+
+  .page {
+    padding-top: 34px;
+  }
+
+  .profile {
+    display: flex;
+    flex-direction: column-reverse;
+    gap: 18px;
+    align-items: center;
+  }
+
+  .profile-copy {
+    width: 100%;
+  }
+
+  .profile-photo {
+    margin-top: 0;
+  }
+
+  .profile-photo img {
+    width: 210px;
+    height: 210px;
+  }
+
+  h1 {
+    font-size: 32px;
+  }
+
+  .links {
+    line-height: 1.9;
+  }
+
+  .publication {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+
+  .publication img {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 2 / 1;
+  }
+}
